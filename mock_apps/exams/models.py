@@ -13,6 +13,10 @@ class QuestionBank(models.Model):
     choices = models.CharField(max_length=200)
     correctChoice = models.IntegerField(default=0)
 
+    def getCorrectAnswer(self):
+        options = self.choices.split(",")
+        answer = options[self.correctChoice].strip()
+        return answer
 
     def __str__(self):
         options = self.choices.split(",")

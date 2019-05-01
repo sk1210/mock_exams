@@ -1,26 +1,106 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <title>Untitled Document</title>
 </head>
 
 <body>
 <div>
-    <h1>{{ section_name }} </h1>
-
-    <div>
+	<h1>{{ section_name }}</h1>
     {% for question in  all_questions %}
-        <p>
-        {{ question.text }}
-            <ol>
-        {{ question.choices }}
-    </ol>
-        </p>
+        <p><b>{{ forloop.counter }}.</b> {{ question.text }}</p>
 
+        <div>
+            {% for choice in question.choices %}
+            <span>{{ forloop.counter }}.</span>
+            <label><input type='radio' name='ansRadio{{ question.id }}' id=''  value='{{ choice }}' />&nbsp;{{ choice }}</label><br/>
+		    {% endfor %}
+        </div>
     {% endfor %}
-    </div>
+                <br/><br/>
+      <div>
+        <button onclick='validate_test( {{question_id}} )'>Submit Test</button>
+      </div>
+
+    <form role="form" id="form1" name="" action='/result/' method='post'> {% csrf_token %}
+         <input type='hidden' id= 'Total' name='Total' value='' />
+         <input type='hidden' id= 'Correct' name='Correct' value='' />
+         <input type='hidden' id= 'Attempted' name='Attempted' value='' />
+    </form>
+
 </div>
 
 </body>
 </html>
+
+<script>
+function validate_test(questions_id)
+{
+    console.log("Hello");
+    console.log(questions_id);
+
+    user_answer = {};
+    document.querySelector('input[name=ansRadio3]:checked');
+
+    for(var i=0; i< questions_id.length ; i++)
+    {
+        var radioName = "ansRadio"+ questions_id[i];
+        //document.querySelector('input[name=ansRadio3]:checked');
+
+        button = document.querySelector("input[name=" + radioName+ ']:checked');
+        if (button)
+        {
+            console.log(button);
+            user_answer[questions_id[i]] = button.value;
+        }
+    }
+        user_answer = {"answer":user_answer}
+        console.log(user_answer);
+
+        $.ajax({
+            url: '/check_ans/',
+            type: 'post',
+            dataType: 'json',
+            contentType: 'application/json',
+            success: function (data) {
+                console.log(data);
+                formData = document.getElementById("form1");
+                document.getElementsByName("Total")[0].value = questions_id.length
+                document.getElementsByName("Correct")[0].value = data.correct
+                document.getElementsByName("Attempted")[0].value = data.total
+                formData.submit();
+              return true;
+            },
+            data: JSON.stringify(user_answer)
+        });
+}
+
+function validate_test1(questions_id)
+{
+    console.log("Hello");
+    console.log(questions_id);
+
+    user_answer = {};
+    document.querySelector('input[name=ansRadio3]:checked');
+
+    for(var i=0; i< questions_id.length ; i++)
+    {
+        var radioName = "ansRadio"+ questions_id[i];
+        //document.querySelector('input[name=ansRadio3]:checked');
+
+        button = document.querySelector("input[name=" + radioName+ ']:checked');
+        if (button)
+        {
+            console.log(button);
+            user_answer[questions_id[i]] = button.value;
+        }
+    }
+    user_answer = { "answer":user_answer }
+    document.getElementById('hiddenField').value = "Whatever I want here";
+    document.getElementById("form1").submit();
+}
+</script>

@@ -20,5 +20,7 @@ from exams import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.index),
-    path('test/',views.test)
+    path('test/',views.test),
+    path('check_ans/',views.check_ans),
+    path('result/',views.result),
 ]
