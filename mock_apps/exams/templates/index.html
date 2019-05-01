@@ -3,52 +3,40 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- test-exam-info -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-8914194228901537"
-     data-ad-slot="7240512539"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-	
+	<!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 <title>Mock Exams</title>
 </head>
-<style>
-table {
-  width:100%;
-}
-table, th, td {
-  border: 1px solid black;
-  border-collapse: collapse;
-}
-th, td {
-  padding: 15px;
-  text-align: left;
-}
-table#t01 tr:nth-child(even) {
-  background-color: #eee;
-}
-table#t01 tr:nth-child(odd) {
- background-color: #fff;
-}
-table#t01 th {
-  background-color: black;
-  color: white;
-}
-</style>
+
+
 <body>
-<h1>786</h1>
-	<div>
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo"> Exam Mocks </a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">About Us</a></li>
+      </ul>
+    </div>
+  </nav>
+
+<div class="container">
+
+	<div class="container">
 		<fieldset>
 			<legend><h2>Login Form</h2></legend>
 				<form>
 					<input type="text" name="name" id="name" placeholder="Enter Your Name"/>
 					<input type="text" name="phone" id="phone" placeholder="Enter Your Mobile No.">
-					<input type="button" value="Submit" >
+
+					<button class="btn waves-effect waves-light" type="submit" name="action" >Submit
+						<i class="material-icons right">send</i>
+					</button>
 				</form>
 		</fieldset>
 	</div>
@@ -71,10 +59,9 @@ table#t01 th {
 
                 {% endfor %}
 
-
-			  			</table>
+			</table>
 	</div>
 
-
+</div>
 </body>
 </html>

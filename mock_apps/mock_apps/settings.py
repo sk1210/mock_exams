@@ -31,6 +31,8 @@ ALLOWED_HOSTS = ["pytech.pythonanywhere.com", "*"]
 # Application definition
 
 INSTALLED_APPS = [
+    #'material',
+    'materialize',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
