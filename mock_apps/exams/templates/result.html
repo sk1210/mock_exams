@@ -22,12 +22,24 @@
   </ul>
 </div>
 </nav>
+<fieldset class="container">
+    <legend><h1>Result</h1></legend>
+<table>
 
-<h1> Result </h1>
+    <th>Total :
+    <td> {{ total }}</td>
+    </th>
+    <th>Attempted :
+    <td>{{ attempted }}</td>
+    </th>
+     <th>Correct :
+    <td> {{ correct }}</td>
+    </th>
+</table>
 
-Correct : {{ correct }}
-Total : {{ total }}
-Attempted : {{ attempted }}
+</fieldset>
+
+
 
 </body>
 </html>
