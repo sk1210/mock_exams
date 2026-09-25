@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Academic Result Verification</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            color: #222;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 50px auto;
+            background: white;
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .header {
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 20px;
+        }
+
+        .verified {
+            color: #16803c;
+            font-weight: bold;
+        }
+
+        .student-info {
+            margin-top: 25px;
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 25px;
+        }
+
+        th, td {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th:last-child,
+        td:last-child {
+            text-align: right;
+        }
+
+        .cgpa {
+            margin-top: 25px;
+            padding: 18px;
+            background: #f1f7f3;
+            border-radius: 8px;
+            font-size: 20px;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .verification {
+            margin-top: 30px;
+            font-size: 13px;
+            color: #666;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="header">
+        <h1>Academic Result</h1>
+        <p class="verified">✓ Verification Record</p>
+    </div>
+
+    <div class="student-info">
+
+        <div class="row">
+            <strong>Student Name</strong>
+            <span>Student Name</span>
+        </div>
+
+        <div class="row">
+            <strong>Roll Number</strong>
+            <span>202600123</span>
+        </div>
+
+        <div class="row">
+            <strong>Program</strong>
+            <span>M.S. Computer Science</span>
+        </div>
+
+        <div class="row">
+            <strong>Year</strong>
+            <span>2026</span>
+        </div>
+
+    </div>
+
+    <table>
+
+        <thead>
+            <tr>
+                <th>Subject</th>
+                <th>Marks</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            <tr>
+                <td>Mathematics</td>
+                <td>92</td>
+            </tr>
+
+            <tr>
+                <td>Machine Learning</td>
+                <td>95</td>
+            </tr>
+
+            <tr>
+                <td>Distributed Systems</td>
+                <td>89</td>
+            </tr>
+
+            <tr>
+                <td>Computer Networks</td>
+                <td>94</td>
+            </tr>
+
+        </tbody>
+
+    </table>
+
+    <div class="cgpa">
+        <span>CGPA</span>
+        <span>9.20</span>
+    </div>
+
+    <div class="verification">
+        Verification ID: ABC123456<br>
+        This page is intended for document verification.
+    </div>
+
+</div>
+
+</body>
+</html>
